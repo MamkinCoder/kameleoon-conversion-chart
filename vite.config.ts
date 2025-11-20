@@ -3,9 +3,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANT: if your repo is NOT <username>.github.io,
-  // set base to "/<repo-name>/"
-  base: "/",
+  base: "/kameleoon-conversion-chart/",
   build: {
     outDir: "docs",
   },
