@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import ControlsBar, { type DropdownConfig } from "./components/ControlsBar";
+import ConversionChart from "./components/ConversionChart";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [variation, setVariation] = useState("all");
+  const [timeRange, setTimeRange] = useState("day");
+  const [lineStyle, setLineStyle] = useState("line");
+
+  const variationConfig: DropdownConfig = {
+    label: "Variation",
+    value: variation,
+    onChange: setVariation,
+    options: [
+      { label: "All variations", value: "all" },
+      { label: "Original", value: "0" },
+      { label: "Variation A", value: "10001" },
+      { label: "Variation B", value: "10002" },
+      { label: "Variation C", value: "10003" },
+    ],
+  };
+
+  const timeRangeConfig: DropdownConfig = {
+    label: "Time range",
+    value: timeRange,
+    onChange: setTimeRange,
+    options: [
+      { label: "Day", value: "day" },
+      { label: "Week", value: "week" },
+    ],
+  };
+
+  const lineStyleConfig: DropdownConfig = {
+    label: "Line style",
+    value: lineStyle,
+    onChange: setLineStyle,
+    options: [
+      { label: "Line", value: "line" },
+      { label: "Smooth", value: "smooth" },
+      { label: "Area", value: "area" },
+    ],
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ padding: "2rem" }}>
+      <ControlsBar
+        leftFirst={variationConfig}
+        leftSecond={timeRangeConfig}
+        right={lineStyleConfig}
+      />
+
+      {/* Later we’ll feed variation/timeRange/lineStyle into this */}
+      <ConversionChart />
+    </div>
+  );
 }
 
-export default App
+export default App;
