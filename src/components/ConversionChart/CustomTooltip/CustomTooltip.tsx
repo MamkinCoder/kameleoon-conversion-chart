@@ -29,7 +29,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
   return (
     <div className={styles.tooltip}>
       <div className={styles.header}>
-        <span className={styles.icon} aria-hidden="true">
+        <span className={styles.calendar} aria-hidden="true">
           <CalendarIcon />
         </span>
         <span className={styles.date}>{dateLabel}</span>
