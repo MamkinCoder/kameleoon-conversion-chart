@@ -1,0 +1,61 @@
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+
+  --container-max: 1200px;
+  --container-max-mobile: 700px;
+
+  --page-padding-x: var(--space-4);
+  --page-padding-y: var(--space-6);
+
+  --bp-mobile: 1000px;
+
+  --font-size-base: 12px;
+}
+
+:root[data-theme="day"] {
+  color-scheme: light;
+
+  --color-bg: #f9fafb;
+  --color-bg-muted: #ffffff;
+  --color-text: #111827;
+  --color-border: #c7c5d1;
+
+  --line-1: #4142ef;
+  --line-2: #ff8346;
+  --line-3: #35bdad;
+  --line-4: #ffb958;
+  --line-5: #df57bc;
+
+  --line-default: #46464f;
+
+  --chart-axis-color: #8f8d98;
+  --chart-grid-color: #e1dfe8;
+}
+
+:root[data-theme="night"] {
+  color-scheme: dark;
+
+  --color-bg: #000027;
+  --color-bg-muted: #000040;
+  --color-text: #e5e7eb;
+  --color-border: #918f9a;
+
+  --line-1: #a1a3ff;
+  --line-2: #ff8346;
+  --line-3: #35bdad;
+  --line-4: #ffb958;
+  --line-5: #df57bc;
+
+  --line-default: #c7c5d0;
+
+  --chart-axis-color: #918f9b;
+  --chart-grid-color: #414166;
+}

@@ -1,0 +1,106 @@
+.controlsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.subGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+.center svg {
+  transform-origin: center;
+}
+
+.jiggle:hover {
+  animation: jiggle 0.6s ease-in-out infinite;
+}
+
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.spinOnce {
+  animation: spin 0.6s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.button {
+  box-sizing: border-box;
+  min-width: 26px;
+  min-height: 26px;
+  padding: 4px 8px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  line-height: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  cursor: pointer;
+  appearance: none;
+}
+.button:hover {
+  background-color: var(--color-bg);
+}
+
+.buttonIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.buttonMinus,
+.buttonPlus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonMinus {
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.buttonPlus {
+  border-radius: 0 4px 4px 0;
+}
