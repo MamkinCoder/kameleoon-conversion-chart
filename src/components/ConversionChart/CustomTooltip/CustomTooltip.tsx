@@ -52,7 +52,7 @@ const CustomTooltip: React.FC<CustomTooltipProps> = ({
                   style={{ backgroundColor: item.color || "#888" }}
                 />
                 <span className={styles.name}>{item.name}</span>
-                {index === 0 ? <RewardIcon /> : 0}
+                {index === 0 ? <RewardIcon /> : null}
               </div>
               <span className={styles.value}>{valueLabel}</span>
             </div>
